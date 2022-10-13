@@ -1,0 +1,42 @@
+<template>
+<lightning-combobox
+    name="OPTION"
+    label="SelectOption"
+    value={value}
+    placeholder="Select Progress"
+    options={options}
+    onchange={handleChange} >
+</lightning-combobox>
+<p>Selected value is: {value}</p>
+
+<lightning-dual-listbox
+        id="selectOptions"
+        name="Object"
+        label="Select Object"
+        source-label="Available Options"
+        selected-label="Selected Options"
+        value={query}
+        options={fields}
+        onchange={clickHandleChange}
+        ></lightning-dual-listbox>
+
+        
+        <br/>
+        <hr/>
+
+ <lightning-button
+         variant="Brand" 
+         label="Submit" 
+         title="After Select" 
+         onclick={handleClick} 
+         class="slds-m-left_x-small"
+         ></lightning-button>
+
+         <br/>
+<lightning-datatable
+        key-field="id"
+        data={data}
+        columns={column}>
+        </lightning-datatable>
+
+</template>
